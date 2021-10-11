@@ -14,13 +14,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight)
 }
 
-function piChart() {
 
-}
-
-function getAngle() {
-
-}
 
 function draw() {
   background('#DDD');
@@ -29,13 +23,11 @@ function draw() {
   push();
   translate(width/2, height/2);
   fill(oil)
-  arc(0, 0, 400, 400, 0, 2*PI*0.4)
-  angle = angle + 2*PI*0.4
-  fill(gas)
-  arc(0, 0, 400, 400, 2*PI*0.4, angle+2*PI*0.03)
+  arc(0, 0, 400, 400, 0, 2*PI*0.4);
   pop();
 }
 
+/* 
 function pieChart(diameter, data) {
   let lastAngle = 0;
   for (let i = 0; i < data.length; i++) {
@@ -51,4 +43,4 @@ function pieChart(diameter, data) {
     );
     lastAngle += radians(angles[i]);
   }
-}
+} */
