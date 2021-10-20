@@ -9,7 +9,7 @@ header {
 }
 
 h1 {
-  font-family: 'Besley', serif;
+  font-family: "Besley", serif;
   margin-bottom: 0;
   margin-top: 0;
   padding-top: 20px;
@@ -21,7 +21,7 @@ h1 {
 
 p {
   color: white;
-  font-family: 'Besley', serif;
+  font-family: "Besley", serif;
   margin-top: 0;
   padding-bottom: 30px;
   display: flex;

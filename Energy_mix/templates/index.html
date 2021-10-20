@@ -14,6 +14,18 @@
       <h1>ENERGY MIX</h1>
       <p>The sources we get our energy from.</p>
   </header>
+
+  <form action="/" method="post">
+    <label for="years">Year:</label>
+    <select name="years" id="years" onchange="this.form.submit()">
+        {% for year in years %}
+        <option value="{{ year[0] }}" {{ 'selected' if year[0] == selected }} >{{ year[0] }}</option>
+
+        {{selected}}            
+        {% endfor %}
+    </select>
+</form>
+
 </body>
 
 </html>
