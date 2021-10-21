@@ -8,8 +8,6 @@ fetch('/data', { method: 'GET' })
       totals.push([c[0], (parseFloat(c[1]) + parseFloat(c[2]) + parseFloat(c[3]) + parseFloat(c[4]) + parseFloat(c[5]) + parseFloat(c[6]) + parseFloat(c[7]) + parseFloat(c[8]) + parseFloat(c[9]))])
     });
     
-
-
   });
 
 let data;
@@ -19,6 +17,7 @@ let data;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  
   /*
   for (const [key, value] of Object.entries(data)) {
     console.log(value[1]);
@@ -54,15 +53,15 @@ function draw() {
   
 
 
-  background('#ffffff');
+  background('#cccccc');
   fill(0);
   noStroke();
   ellipseMode(RADIUS);
 
   
   let angleStart = -HALF_PI; // start at the top
-  const outerRadius = 60;
-  const innerRadius = 35;
+  const outerRadius = 50;
+  const innerRadius = 30;
 
   for (let c = 19; c > -1; c--) {
     for (let d = 1; d < 10; d++) {
@@ -70,13 +69,21 @@ function draw() {
       fill(colors[d]);
       let wedgeSize = map(entry, 0, totals[c][1], 0, TAU);
       let angleStop = angleStart + wedgeSize;
-      arc(windowWidth/2, windowHeight/2, outerRadius+30*c, outerRadius+30*c, angleStart, angleStop);
+      arc(windowWidth/2, windowHeight/2, outerRadius+21*c, outerRadius+21*c, angleStart, angleStop);
       angleStart = angleStop;
     }
     // knock a hole out of the middle
     fill(255);
-    ellipse(windowWidth/2, windowHeight/2, innerRadius+30*c, innerRadius+30*c);
+    ellipse(windowWidth/2, windowHeight/2, innerRadius+21*c, innerRadius+21*c);
   }
+
+ 
+  for (let i = 0; i < 20; i++) {
+    textSize(21);
+    text(totals[i][0], windowWidth/2, windowHeight/2-33-21*i)
+  }
+  
+  
 
 }
 
@@ -84,24 +91,5 @@ function draw() {
 
 
 
-////////////////////////////////////////////////////////////////////////////////////
-
-
-/*
-  // draw the legend
-  let legendX = 300;
-  let y = 280;
-  let legendBox = 8;
-  noStroke();
-  textAlign(LEFT);
-  for (let c = 0; c < conditions.length; c++) {
-    let entry = conditions[c];
-    fill(entry.color);
-    rect(legendX, y - legendBox, legendBox, legendBox);
-    fill(0);
-    text(entry.name, legendX + legendBox + 5, y);
-    y += 20;
-  }
-} */
 
 
